@@ -9,12 +9,33 @@ const AcademyBranches = () => {
 
   const branches = [
     {
+      id: "abhyasa",
+      name: "Abhyasa Academy",
+      location: "Banaswadi",
+      fullAddress: "Banaswadi, Bangalore",
+      images: [
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        "/images/groupimg-1.jpg",
+      ],
+      phone: "+91 98765 43211",
+      email: "abhyasa@academy.com",
+      features: [
+        "State-of-art Labs",
+        "Personalized Coaching",
+        "Digital Learning",
+      ],
+      established: "2018",
+      students: "350+",
+      bgGradient: "from-orange-500 to-orange-700",
+      cardBg: "from-orange-50 to-orange-100",
+    },
+    {
       id: "akshara",
       name: "Akshara Academy",
       location: "Kasturi Nagar",
       fullAddress: "Kasturi Nagar, Bangalore",
       images: [
-        "https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        "/images/moto.jpg",
         "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       ],
       phone: "+91 98765 43210",
@@ -28,27 +49,6 @@ const AcademyBranches = () => {
       students: "500+",
       bgGradient: "from-green-500 to-green-700",
       cardBg: "from-green-50 to-green-100",
-    },
-    {
-      id: "abhyasa",
-      name: "Abhyasa Academy",
-      location: "Banaswadi",
-      fullAddress: "Banaswadi, Bangalore",
-      images: [
-        "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-        "/images/moto.jpg",
-      ],
-      phone: "+91 98765 43211",
-      email: "abhyasa@academy.com",
-      features: [
-        "State-of-art Labs",
-        "Personalized Coaching",
-        "Digital Learning",
-      ],
-      established: "2018",
-      students: "350+",
-      bgGradient: "from-orange-500 to-orange-700",
-      cardBg: "from-orange-50 to-orange-100",
     },
   ];
 

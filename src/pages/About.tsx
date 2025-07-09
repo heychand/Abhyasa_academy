@@ -1,40 +1,70 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Award, Users, Target, Heart, BookOpen, Globe } from 'lucide-react';
-import Section from '../components/Common/Section';
-import { ACADEMY_INFO } from '../utils/constants';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Award,
+  Users,
+  Target,
+  Heart,
+  BookOpen,
+  Globe,
+  Quote,
+  Star,
+  Shield,
+  Lightbulb,
+} from "lucide-react";
+import Section from "../components/Common/Section";
+import { ACADEMY_INFO } from "../utils/constants";
 
 const About: React.FC = () => {
   const values = [
     {
       icon: Award,
-      title: 'Excellence',
-      description: 'Committed to maintaining the highest standards in education and student development.'
+      title: "Excellence",
+      description:
+        "Committed to maintaining the highest standards in education and student development.",
+      color: "bg-blue-100 text-blue-600",
+      hoverColor: "hover:bg-blue-200",
     },
     {
       icon: Users,
-      title: 'Community',
-      description: 'Building a supportive learning community that fosters collaboration and growth.'
+      title: "Community",
+      description:
+        "Building a supportive learning community that fosters collaboration and growth.",
+      color: "bg-purple-100 text-purple-600",
+      hoverColor: "hover:bg-purple-200",
     },
     {
       icon: Target,
-      title: 'Innovation',
-      description: 'Embracing new technologies and methodologies to enhance learning experiences.'
+      title: "Innovation",
+      description:
+        "Embracing new technologies and methodologies to enhance learning experiences.",
+      color: "bg-red-100 text-red-600",
+      hoverColor: "hover:bg-red-200",
     },
     {
       icon: Heart,
-      title: 'Care',
-      description: 'Providing personalized attention and support to every student\'s unique needs.'
-    }
-  ];
-
-  const milestones = [
-    { year: '2010', event: 'Academy Founded', description: 'Started with a vision to transform education' },
-    { year: '2012', event: 'First Batch Success', description: '100% placement rate achieved' },
-    { year: '2015', event: 'Research Center', description: 'Established state-of-the-art research facilities' },
-    { year: '2018', event: 'International Recognition', description: 'Received global education excellence award' },
-    { year: '2020', event: 'Digital Transformation', description: 'Pioneered online learning platforms' },
-    { year: '2023', event: 'Expansion', description: 'Opened new campus with modern facilities' }
+      title: "Care",
+      description:
+        "Providing personalized attention and support to every student's unique needs.",
+      color: "bg-pink-100 text-pink-600",
+      hoverColor: "hover:bg-pink-200",
+    },
+    {
+      icon: Shield,
+      title: "Integrity",
+      description:
+        "Upholding the highest ethical standards in all our educational practices and interactions.",
+      color: "bg-indigo-100 text-indigo-600",
+      hoverColor: "hover:bg-indigo-200",
+    },
+    {
+      icon: Lightbulb,
+      title: "Wisdom",
+      description:
+        "Fostering critical thinking and practical wisdom that guides students throughout their lives.",
+      color: "bg-yellow-100 text-yellow-600",
+      hoverColor: "hover:bg-yellow-200",
+    },
   ];
 
   return (
@@ -46,7 +76,7 @@ const About: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-display font-bold text-green-700 mb-6"
           >
             About {ACADEMY_INFO.name}
           </motion.h1>
@@ -56,28 +86,61 @@ const About: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
-            Established in {ACADEMY_INFO.established}, we have been at the forefront of educational excellence 
-            in {ACADEMY_INFO.location}, nurturing minds and shaping futures for over a decade.
+            Established in {ACADEMY_INFO.established}, we have been at the
+            forefront of educational excellence in {ACADEMY_INFO.location},
+            nurturing minds and shaping futures for over a decade.
           </motion.p>
         </div>
       </Section>
 
-      {/* Mission & Vision */}
+      {/* Chairman Section */}
       <Section background="white" padding="xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Chairman Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="relative"
           >
-            <img
-              src="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-              alt="Students in classroom"
-              className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-            />
+            <div className="relative group">
+              <img
+                src="https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="Mrs. Gaanashri Ravikumar - Chairman"
+                className="w-full h-[500px] object-cover rounded-3xl shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+              />
+
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-green-100 to-orange-100 rounded-full opacity-30 transition-opacity duration-500 group-hover:opacity-50"></div>
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-orange-100 to-green-100 rounded-full opacity-20 transition-opacity duration-500 group-hover:opacity-40"></div>
+
+              {/* Achievement badges */}
+              <div className="absolute top-6 right-6 bg-white rounded-2xl p-4 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105">
+                <div className="flex items-center space-x-2">
+                  <Award className="h-6 w-6 text-amber-500" />
+                  <span className="text-sm font-semibold text-gray-800">
+                    20+ Years
+                  </span>
+                </div>
+                <p className="text-xs text-gray-600 mt-1">
+                  Educational Leadership
+                </p>
+              </div>
+
+              {/* Trust Badge */}
+              <div className="absolute bottom-6 left-6 bg-gradient-to-r from-green-600 to-orange-600 rounded-2xl p-4 shadow-lg">
+                <div className="text-white text-center">
+                  <Globe className="h-6 w-6 mx-auto mb-2" />
+                  <p className="text-xs font-semibold">
+                    Kumarashri Educational Trust
+                  </p>
+                </div>
+              </div>
+            </div>
           </motion.div>
-          
+
+          {/* Chairman Information */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -85,26 +148,126 @@ const About: React.FC = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <div>
-              <div className="flex items-center mb-4">
-                <Target className="h-8 w-8 text-primary-600 mr-3" />
-                <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
+            {/* Header */}
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-1 bg-gradient-to-r from-green-600 to-orange-600"></div>
+                <span className="text-green-600 font-medium text-sm uppercase tracking-wide">
+                  Our Visionary Leader
+                </span>
               </div>
-              <p className="text-gray-600 leading-relaxed">
-                To provide world-class education that empowers students with knowledge, skills, and values 
-                necessary to excel in their chosen fields and contribute meaningfully to society.
-              </p>
+
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
+                Mrs. Gaanashri Ravikumar
+              </h2>
+
+              <div className="space-y-2">
+                <p className="text-xl text-orange-600 font-semibold">
+                  Chairman, Kumarashri Educational Trust
+                </p>
+                <p className="text-lg text-gray-600">M.Sc, B.Ed</p>
+              </div>
             </div>
-            
-            <div>
-              <div className="flex items-center mb-4">
-                <Globe className="h-8 w-8 text-primary-600 mr-3" />
-                <h3 className="text-2xl font-bold text-gray-900">Our Vision</h3>
+
+            {/* Credentials */}
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3">
+                <Award className="h-5 w-5 text-green-600" />
+                <span className="text-gray-700">Master of Science (M.Sc)</span>
               </div>
-              <p className="text-gray-600 leading-relaxed">
-                To be recognized as a premier educational institution that shapes global leaders, 
-                innovators, and responsible citizens through excellence in teaching, research, and service.
-              </p>
+              <div className="flex items-center space-x-3">
+                <Award className="h-5 w-5 text-orange-600" />
+                <span className="text-gray-700">
+                  Bachelor of Education (B.Ed)
+                </span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Globe className="h-5 w-5 text-green-600" />
+                <span className="text-gray-700">
+                  Founder & Chairman - Kumarashri Educational Trust
+                </span>
+              </div>
+            </div>
+
+            {/* Institutions */}
+            <div className="bg-gradient-to-r from-green-50 to-orange-50 p-6 rounded-2xl">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                Our Institutions
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Abhyasa Academy */}
+                <div className="flex flex-col">
+                  <div className="flex items-center space-x-3">
+                    <BookOpen className="h-5 w-5 text-green-600" />
+                    <span className="text-gray-700 font-medium">
+                      Abhyasa Academy
+                    </span>
+                  </div>
+                  <span className="text-sm text-gray-500 ml-8">
+                    Banaswadi, Bangalore
+                  </span>
+                </div>
+
+                {/* Akshara Academy */}
+                <div className="flex flex-col">
+                  <div className="flex items-center space-x-3">
+                    <BookOpen className="h-5 w-5 text-orange-600" />
+                    <span className="text-gray-700 font-medium">
+                      Akshara Academy
+                    </span>
+                  </div>
+                  <span className="text-sm text-gray-500 ml-8">
+                    Kasturi Nagar, Bangalore
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Quote */}
+            <div className="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-green-500 relative transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+              <Quote className="absolute top-4 left-4 h-8 w-8 text-green-200" />
+              <div className="ml-6">
+                <p className="text-gray-700 text-lg leading-relaxed italic mb-4">
+                  "Education is the foundation upon which we build our future.
+                  Through Kumarashri Educational Trust, we are committed to
+                  providing quality education that transforms lives and
+                  communities."
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  "Our dual academies - Abhyasa and Akshara - represent our
+                  dedication to holistic education that nurtures not just
+                  academic excellence, but also character, values, and life
+                  skills that prepare students for success in an ever-changing
+                  world."
+                </p>
+              </div>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-6">
+              <div className="text-center group">
+                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-green-100 to-green-200 rounded-full mx-auto mb-3 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+                  <Users className="h-6 w-6 text-green-600" />
+                </div>
+                <div className="text-2xl font-bold text-gray-900">4000+</div>
+                <div className="text-sm text-gray-600">Students Educated</div>
+              </div>
+              <div className="text-center group">
+                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full mx-auto mb-3 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+                  <Award className="h-6 w-6 text-orange-600" />
+                </div>
+                <div className="text-2xl font-bold text-gray-900">5+</div>
+                <div className="text-sm text-gray-600">
+                  Awards & Recognition
+                </div>
+              </div>
+              <div className="text-center group">
+                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full mx-auto mb-3 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+                  <Star className="h-6 w-6 text-amber-600" />
+                </div>
+                <div className="text-2xl font-bold text-gray-900">2</div>
+                <div className="text-sm text-gray-600">Premier Academies</div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -127,13 +290,15 @@ const About: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl text-gray-600"
+            className="text-xl text-gray-600 max-w-3xl mx-auto"
           >
-            The principles that guide everything we do
+            The fundamental principles that guide our educational philosophy and
+            shape the character of our students across both Abhyasa and Akshara
+            Academies
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {values.map((value, index) => (
             <motion.div
               key={index}
@@ -141,133 +306,19 @@ const About: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300"
+              className={`bg-white rounded-xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 group hover:scale-[1.05] hover:-translate-y-2 ${value.hoverColor}`}
             >
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <value.icon className="h-8 w-8 text-primary-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{value.description}</p>
-            </motion.div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Our Journey */}
-      <Section background="white" padding="xl">
-        <div className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4"
-          >
-            Our Journey
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-xl text-gray-600"
-          >
-            Milestones that mark our path to excellence
-          </motion.p>
-        </div>
-
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary-200 hidden md:block"></div>
-          
-          <div className="space-y-12">
-            {milestones.map((milestone, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+              <div
+                className={`w-16 h-16 ${value.color} rounded-full flex items-center justify-center mx-auto mb-6 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg`}
               >
-                <div className="flex-1 md:w-1/2">
-                  <div className={`bg-white rounded-xl p-6 shadow-lg ${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'}`}>
-                    <div className="text-2xl font-bold text-primary-600 mb-2">{milestone.year}</div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{milestone.event}</h3>
-                    <p className="text-gray-600">{milestone.description}</p>
-                  </div>
-                </div>
-                
-                {/* Timeline Dot */}
-                <div className="hidden md:block w-4 h-4 bg-primary-600 rounded-full border-4 border-white shadow-lg relative z-10"></div>
-                
-                <div className="flex-1 md:w-1/2"></div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Leadership Team */}
-      <Section background="gray" padding="xl">
-        <div className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4"
-          >
-            Leadership Team
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-xl text-gray-600"
-          >
-            Meet the visionaries leading our institution
-          </motion.p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              name: 'Dr. Rajesh Kumar',
-              role: 'Principal & Director',
-              image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=2',
-              bio: 'Ph.D. in Education, 25+ years of experience in academic leadership.'
-            },
-            {
-              name: 'Prof. Sunitha Nair',
-              role: 'Academic Director',
-              image: 'https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=2',
-              bio: 'Former IIT professor, expert in curriculum development and research.'
-            },
-            {
-              name: 'Mr. Vikram Shetty',
-              role: 'Operations Director',
-              image: 'https://images.pexels.com/photos/1300402/pexels-photo-1300402.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=2',
-              bio: 'MBA from IIM, specialist in educational technology and operations.'
-            }
-          ].map((leader, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <img
-                src={leader.image}
-                alt={leader.name}
-                className="w-24 h-24 rounded-full object-cover mx-auto mb-4"
-              />
-              <h3 className="text-xl font-semibold text-gray-900 mb-1">{leader.name}</h3>
-              <p className="text-primary-600 font-medium mb-3">{leader.role}</p>
-              <p className="text-gray-600 text-sm leading-relaxed">{leader.bio}</p>
+                <value.icon className="h-8 w-8" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-gray-800">
+                {value.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed group-hover:text-gray-700">
+                {value.description}
+              </p>
             </motion.div>
           ))}
         </div>

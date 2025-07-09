@@ -36,10 +36,6 @@ const MottoVisionMission = () => {
     },
   ];
 
-  const handleViewMore = (sectionId: string) => {
-    window.location.href = `/about#${sectionId}`;
-  };
-
   return (
     <section className="relative py-16 overflow-hidden bg-white">
       {/* Parallax Background Elements */}
@@ -84,7 +80,6 @@ const MottoVisionMission = () => {
               }}
               viewport={{ once: true }}
               className="group cursor-pointer"
-              onClick={() => handleViewMore(section.id)}
             >
               <div
                 className={`relative h-[600px] ${section.bgColor} transition-all duration-500 hover:scale-105 hover:shadow-2xl`}
@@ -110,16 +105,6 @@ const MottoVisionMission = () => {
                     >
                       {section.description}
                     </p>
-
-                    {/* View More Button */}
-                    <motion.button
-                      whileHover={{ x: 5 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`inline-flex items-center ${section.textColor} font-bold text-sm group-hover:underline transition-all duration-300 mb-8`}
-                    >
-                      <ChevronRight className="w-4 h-4 mr-1" />
-                      View More
-                    </motion.button>
                   </div>
 
                   {/* Student Image */}

@@ -1,111 +1,111 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import Section from '../components/Common/Section';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import Section from "../components/Common/Section";
 
 const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   const categories = [
-    { id: 'all', name: 'All' },
-    { id: 'campus', name: 'Campus' },
-    { id: 'labs', name: 'Laboratories' },
-    { id: 'events', name: 'Events' },
-    { id: 'sports', name: 'Sports' },
-    { id: 'library', name: 'Library' }
+    { id: "all", name: "All" },
+    { id: "classroom", name: "Classroom Sessions" },
+    { id: "workshops", name: "Workshops" },
+    { id: "achievements", name: "Student Achievements" },
+    { id: "events", name: "Events" },
   ];
 
   const images = [
     {
       id: 1,
-      src: 'https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      title: 'Modern Classroom',
-      category: 'campus',
-      description: 'Smart classroom with latest technology'
+      src: "https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      title: "Modern Classroom",
+      category: "classroom",
+      description: "Smart classroom with latest technology",
     },
     {
       id: 2,
-      src: 'https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      title: 'Chemistry Laboratory',
-      category: 'labs',
-      description: 'Advanced chemistry lab with modern equipment'
+      src: "https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      title: "Chemistry Laboratory",
+      category: "workshops",
+      description: "Advanced chemistry lab with modern equipment",
     },
     {
       id: 3,
-      src: 'https://images.pexels.com/photos/1142950/pexels-photo-1142950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      title: 'Digital Library',
-      category: 'library',
-      description: 'Extensive collection of books and digital resources'
+      src: "https://images.pexels.com/photos/1142950/pexels-photo-1142950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      title: "Digital Library",
+      category: "achievements",
+      description: "Extensive collection of books and digital resources",
     },
     {
       id: 4,
-      src: 'https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      title: 'Students Studying',
-      category: 'campus',
-      description: 'Students engaged in collaborative learning'
+      src: "https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      title: "Students Studying",
+      category: "campus",
+      description: "Students engaged in collaborative learning",
     },
     {
       id: 5,
-      src: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      title: 'Computer Lab',
-      category: 'labs',
-      description: 'State-of-the-art computer laboratory'
+      src: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      title: "Computer Lab",
+      category: "labs",
+      description: "State-of-the-art computer laboratory",
     },
     {
       id: 6,
-      src: 'https://images.pexels.com/photos/1308881/pexels-photo-1308881.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      title: 'Annual Sports Day',
-      category: 'events',
-      description: 'Students participating in annual sports competition'
+      src: "https://images.pexels.com/photos/1308881/pexels-photo-1308881.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      title: "Annual Sports Day",
+      category: "events",
+      description: "Students participating in annual sports competition",
     },
     {
       id: 7,
-      src: 'https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      title: 'Cafeteria',
-      category: 'campus',
-      description: 'Modern cafeteria with healthy meal options'
+      src: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      title: "Cafeteria",
+      category: "events",
+      description: "Modern cafeteria with healthy meal options",
     },
     {
       id: 8,
-      src: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      title: 'Basketball Court',
-      category: 'sports',
-      description: 'Indoor basketball court for recreational activities'
+      src: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      title: "Basketball Court",
+      category: "sports",
+      description: "Indoor basketball court for recreational activities",
     },
     {
       id: 9,
-      src: 'https://images.pexels.com/photos/1181394/pexels-photo-1181394.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      title: 'Graduation Ceremony',
-      category: 'events',
-      description: 'Annual graduation ceremony celebration'
+      src: "https://images.pexels.com/photos/1181394/pexels-photo-1181394.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      title: "Graduation Ceremony",
+      category: "events",
+      description: "Annual graduation ceremony celebration",
     },
     {
       id: 10,
-      src: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      title: 'Study Hall',
-      category: 'library',
-      description: 'Quiet study space for focused learning'
+      src: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      title: "Study Hall",
+      category: "library",
+      description: "Quiet study space for focused learning",
     },
     {
       id: 11,
-      src: 'https://images.pexels.com/photos/1119973/pexels-photo-1119973.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      title: 'Campus Transport',
-      category: 'campus',
-      description: 'Safe and comfortable transportation facility'
+      src: "https://images.pexels.com/photos/1119973/pexels-photo-1119973.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      title: "Campus Transport",
+      category: "campus",
+      description: "Safe and comfortable transportation facility",
     },
     {
       id: 12,
-      src: 'https://images.pexels.com/photos/1181772/pexels-photo-1181772.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      title: 'Science Fair',
-      category: 'events',
-      description: 'Annual science exhibition and fair'
-    }
+      src: "https://images.pexels.com/photos/1181772/pexels-photo-1181772.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      title: "Science Fair",
+      category: "events",
+      description: "Annual science exhibition and fair",
+    },
   ];
 
-  const filteredImages = selectedCategory === 'all' 
-    ? images 
-    : images.filter(img => img.category === selectedCategory);
+  const filteredImages =
+    selectedCategory === "all"
+      ? images
+      : images.filter((img) => img.category === selectedCategory);
 
   const openModal = (index: number) => {
     setSelectedImage(index);
@@ -123,7 +123,9 @@ const Gallery: React.FC = () => {
 
   const prevImage = () => {
     if (selectedImage !== null) {
-      setSelectedImage(selectedImage === 0 ? filteredImages.length - 1 : selectedImage - 1);
+      setSelectedImage(
+        selectedImage === 0 ? filteredImages.length - 1 : selectedImage - 1
+      );
     }
   };
 
@@ -136,7 +138,7 @@ const Gallery: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-display font-bold text-green-700 mb-6"
           >
             Our Gallery
           </motion.h1>
@@ -146,8 +148,8 @@ const Gallery: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
-            Take a visual journey through our beautiful campus, modern facilities, 
-            and vibrant student life at Abhyasa Academy.
+            Take a visual journey through our beautiful campus, modern
+            facilities, and vibrant student life at Abhyasa Academy.
           </motion.p>
         </div>
       </Section>
@@ -164,8 +166,8 @@ const Gallery: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 selectedCategory === category.id
-                  ? 'bg-primary-600 text-white shadow-lg'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ? "bg-primary-600 text-white shadow-lg"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
               {category.name}
@@ -198,11 +200,13 @@ const Gallery: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                
+
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <h3 className="text-lg font-semibold mb-1">{image.title}</h3>
+                    <h3 className="text-lg font-semibold mb-1">
+                      {image.title}
+                    </h3>
                     <p className="text-sm opacity-90">{image.description}</p>
                   </div>
                 </div>
@@ -260,8 +264,12 @@ const Gallery: React.FC = () => {
 
               {/* Image Info */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white rounded-b-lg">
-                <h3 className="text-2xl font-bold mb-2">{filteredImages[selectedImage].title}</h3>
-                <p className="text-lg opacity-90">{filteredImages[selectedImage].description}</p>
+                <h3 className="text-2xl font-bold mb-2">
+                  {filteredImages[selectedImage].title}
+                </h3>
+                <p className="text-lg opacity-90">
+                  {filteredImages[selectedImage].description}
+                </p>
               </div>
             </motion.div>
           </motion.div>

@@ -197,7 +197,7 @@ const Hero = () => {
               <div className="flex items-center justify-center lg:justify-start">
                 <GraduationCap className="h-7 w-7 text-primary-600 mr-2" />
                 <h3 className="text-2xl font-bold text-gray-800">
-                  Grades 3rd-12th
+                  Grades 3rd-12th + NEET
                 </h3>
               </div>
             </motion.div>

@@ -27,4 +27,3 @@ export const STATS = [
   { label: "Years of Excellence", value: "14+" },
   { label: "Success Rate", value: "95%" },
 ];
-
